@@ -46,19 +46,22 @@ export default function Metronome() {
   }
 
   return (
-    <div className="metronome">
-      <div className="bpm-slider">
-        <div>{bpm} BPM</div>
-        {/* Add the onClick handler: */}
-        <input
-          type="range"
-          min="60"
-          max="240"
-          onChange={handleBpmChange}
-          value={bpm}
-        />
+    <section className="bigBox">
+      <h1>Metronome</h1>
+      <div className="metronome">
+        <div className="bpm-slider">
+          <div>{bpm} BPM</div>
+          {/* Add the onClick handler: */}
+          <input
+            type="range"
+            min="60"
+            max="240"
+            onChange={handleBpmChange}
+            value={bpm}
+          />
+        </div>
+        <button onClick={startStop}>{playing ? "Stop" : "Start"}</button>
       </div>
-      <button onClick={startStop}>{playing ? "Stop" : "Start"}</button>
-    </div>
+    </section>
   )
 }
